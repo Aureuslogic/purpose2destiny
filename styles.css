@@ -1,0 +1,248 @@
+/* ============================================
+   Purpose2Destiny — Shared Design System
+   Official brand palette: soft, warm, calm, clear.
+   ============================================ */
+
+:root {
+  /* Primary */
+  --cream: #FFF9F0;        /* warm cream / off-white background */
+  --cream-deep: #FAF5E6;   /* secondary background */
+  --slate: #E6E6E6;        /* soft slate / light grey, neutral */
+  --slate-deep: #CFCFCF;
+
+  /* Accent */
+  --gold: #F6D365;         /* soft gold, hover / accents */
+  --teal: #4DB6AC;         /* headings / secondary buttons, trust */
+  --teal-dark: #3C9089;
+  --coral: #F28C7D;        /* call-to-action buttons */
+  --coral-dark: #E06F5C;
+
+  /* Text / grounding */
+  --navy: #2F3E46;
+  --navy-soft: #4A5A63;
+  --white: #FFFFFF;
+
+  /* Type */
+  --font-head: "Poppins", -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: "Work Sans", -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Scale — accessible for a 45-75 audience, minimum ~16px body */
+  --fs-h1: clamp(2.2rem, 4.6vw, 3.2rem);
+  --fs-h2: clamp(1.7rem, 3vw, 2.3rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-body: 1.125rem;
+  --fs-small: 1rem;
+
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(47, 62, 70, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.75;
+  color: var(--navy);
+  background: var(--cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p { margin: 0 0 1.2em; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { padding-left: 1.3em; }
+li { margin-bottom: 0.5em; }
+
+a { color: var(--teal-dark); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--coral-dark); }
+
+img { max-width: 100%; display: block; border-radius: var(--radius); }
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section { padding: 72px 0; }
+.section--alt { background: var(--cream-deep); }
+.section--slate { background: var(--slate); }
+
+.section--navy {
+  background: var(--navy);
+  color: var(--cream);
+}
+.section--navy h1, .section--navy h2, .section--navy h3 { color: var(--cream); }
+.section--navy p { color: var(--cream-deep); }
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--teal-dark);
+  margin-bottom: 0.8em;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+.btn--primary {
+  background: var(--coral);
+  color: var(--white);
+}
+.btn--primary:hover { background: var(--coral-dark); box-shadow: var(--shadow); }
+
+.btn--secondary {
+  background: var(--teal);
+  color: var(--white);
+}
+.btn--secondary:hover { background: var(--teal-dark); box-shadow: var(--shadow); }
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.btn--outline:hover { background: var(--navy); color: var(--cream); }
+
+.btn--on-dark {
+  background: var(--gold);
+  color: var(--navy);
+}
+.btn--on-dark:hover { background: var(--coral); color: var(--white); }
+
+/* ---------- Header / Nav ---------- */
+header.site-header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--slate);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1160px;
+  margin: 0 auto;
+  gap: 18px;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.logo span { color: var(--coral); }
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav.main-nav a {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+nav.main-nav a:hover { color: var(--coral-dark); }
+
+nav.main-nav li.current > a { color: var(--coral-dark); }
+
+/* Dropdown */
+nav.main-nav li.has-dropdown { position: relative; }
+nav.main-nav .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 240px;
+  list-style: none;
+  margin: 8px 0 0;
+  z-index: 50;
+}
+nav.main-nav li.has-dropdown:hover .dropdown,
+nav.main-nav li.has-dropdown:focus-within .dropdown {
+  display: block;
+}
+nav.main-nav .dropdown li { margin: 0; }
+nav.main-nav .dropdown a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+nav.main-nav .dropdown a:hover { background: var(--cream-deep); text-decoration: none; }
+
+@media (max-width: 960px) {
+  .nav-wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+  nav.main-nav ul { gap: 12px 18px; }
+  nav.main-nav .dropdown { position: static; box-shadow: none; padding-left: 14px; margin-top: 6px; }
+  nav.main-nav li.has-dropdown:hover .dropdown,
+  nav.main-nav li.has-dropdown:focus-within .dropdown { display: block; }
+}
+
+/* ---------- Hero ---------- */
+.hero { padding: 84px 0 76px; text-align: center; }
+.hero .container { max-width: 860px; }
+.hero p.lede { font-size: 1.25rem; color: var(--navy-soft); }
+.hero .btn-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.4em;
+}
+
+.hero--left { text-align: left; }
+.hero--left .container { max-width: 1160px; }
+.hero--left .btn-row { justify-content: flex-start; }
+
+/* ---------- Cards / grid ---------- */
+.grid { display: grid; gap: 26px; }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--2 { grid-template-colum
