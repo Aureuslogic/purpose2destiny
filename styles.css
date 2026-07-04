@@ -252,6 +252,83 @@ p.lede {
 .hero--left .container { max-width: 1160px; }
 .hero--left .btn-row { justify-content: flex-start; }
 
+/* ---------- Cinematic heroes ---------- */
+.p2d-hero {
+  min-height: clamp(480px, 68vh, 720px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.p2d-hero--framework {
+  min-height: clamp(480px, 56vh, 620px);
+}
+.p2d-hero picture,
+.p2d-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 50%;
+  position: absolute;
+  inset: 0;
+}
+.p2d-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(30, 43, 42, 0.78) 0%, rgba(30, 43, 42, 0.52) 42%, rgba(30, 43, 42, 0) 65%);
+  pointer-events: none;
+}
+.p2d-hero--warm::before {
+  background: linear-gradient(90deg, rgba(250, 245, 230, 0.9) 0%, rgba(250, 245, 230, 0.58) 38%, rgba(250, 245, 230, 0) 62%);
+}
+.p2d-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  padding: 80px 0;
+}
+.p2d-hero .eyebrow { color: var(--gold); }
+.p2d-hero h1,
+.p2d-hero p.lede { color: var(--cream); }
+.p2d-hero .btn--outline {
+  border-color: var(--cream);
+  color: var(--cream);
+}
+.p2d-hero .btn--outline:hover {
+  background: var(--cream);
+  color: var(--navy);
+}
+.p2d-hero--warm .eyebrow { color: var(--teal-dark); }
+.p2d-hero--warm h1,
+.p2d-hero--warm p.lede { color: var(--navy); }
+.p2d-hero--warm .btn--outline {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.p2d-hero--warm .btn--outline:hover {
+  background: var(--navy);
+  color: var(--cream);
+}
+.p2d-hero--pos-74 img { object-position: 74% 50%; }
+.p2d-hero--pos-70 img { object-position: 70% 50%; }
+.p2d-hero--pos-76 img { object-position: 76% 48%; }
+.p2d-hero--pos-74.p2d-hero--framework img { object-position: 70% 50%; }
+
+@media (max-width: 767px) {
+  .p2d-hero { min-height: 520px; }
+  .p2d-hero img { object-position: 72% 42%; }
+  .p2d-hero--pos-74 img { object-position: 70% 42%; }
+  .p2d-hero--pos-70 img,
+  .p2d-hero--pos-74.p2d-hero--framework img { object-position: 68% 42%; }
+  .p2d-hero--pos-76 img { object-position: 72% 44%; }
+  .p2d-hero__content {
+    padding: 56px 0;
+    max-width: 92%;
+  }
+}
+
 /* ---------- Cards / grid ---------- */
 .grid { display: grid; gap: 26px; }
 .grid--4 { grid-template-columns: repeat(4, 1fr); }
