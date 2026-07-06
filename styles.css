@@ -617,6 +617,19 @@ p.lede {
   margin-top: 2rem;
 }
 
+/* ---------- Framework diagram ---------- */
+.framework-diagram {
+  margin: 0 0 2rem;
+  text-align: center;
+}
+.framework-diagram img {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 /* ---------- Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
