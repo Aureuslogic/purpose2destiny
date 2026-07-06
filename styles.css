@@ -633,6 +633,36 @@ p.lede {
   box-shadow: var(--shadow);
 }
 
+@media (min-width: 768px) {
+  .framework-diagram {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .framework-diagram img {
+    width: 100%;
+    max-width: 640px;
+    max-height: 480px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 1024px) {
+  .framework-diagram {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .framework-diagram img {
+    width: 100%;
+    max-width: 900px;
+    max-height: 720px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
 /* ---------- Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
