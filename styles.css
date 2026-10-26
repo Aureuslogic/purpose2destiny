@@ -823,3 +823,8 @@ p.lede {
     transition: none;
   }
 }
+
+/* ---------- Vapi voice widget ---------- */
+vapi-widget {
+  --vapi-widget-z-index: 9999;
+}
